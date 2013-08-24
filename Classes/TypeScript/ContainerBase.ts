@@ -10,42 +10,34 @@
  
 
 
-        constructor(element: HTMLElement, pheigth, plength, pwidth)
+        constructor(element: HTMLElement)
         {
-            var height = pheigth;
-            var length = plength;
-            var width = pwidth;
 
-
-            this.element = element;
-            this.span = <HTMLElement>document.createElement("span");
             
-            this.element.appendChild(this.span);
-           
-            var canvas = <HTMLCanvasElement>document.getElementById("20box");
-            var c2: CanvasRenderingContext2D  = canvas.getContext("2d");
-
-
-            c2.fillStyle = '#000';
-            c2.beginPath();
-            c2.moveTo(0, 0);
-            c2.lineTo(100, 50);
-            c2.lineTo(50, 100);
-            c2.lineTo(0, 90);
-            c2.closePath();
-            c2.fill();
-
-
-            this.element.innerHTML += Math.sqrt(height * length * width).toString();
 
         }
+
+     Paint(plength, pwidth, pheight, pBoxId, pColorRal) {
+
+        var canvas = <HTMLCanvasElement> document.getElementById(pBoxId);
+
+         var can = canvas.getContext("2d");
+
+         can.fillStyle = pColorRal;
+        can.fillRect(0, 0, plength,pheight);
+     }
 
       
     }
 
 window.onload = () => {
-    var el = document.getElementById('ContainerBase');
-    var container = new Container(el, 6058, 2438, 2591);
+    var el = document.getElementById('First');
+    var container = new Container(el);
+    container.Paint(605.8, 0, 259.1, '20box', '#2A3756');
+
+    var el2 = document.getElementById('Second');
+    var container2 = new Container(el2);
+    container2.Paint(1219.2, 0, 259.1, '40box', '#64312a');
 
 };
 
