@@ -19,6 +19,7 @@
     <Content Include="app.css" />
     <TypeScriptCompile Include="Classes\TypeScript\ContainerBase.ts" />
     <TypeScriptCompile Include="Classes\TypeScript\ContainerWizard.ts" />
+    <TypeScriptCompile Include="Classes\TypeScript\Main.ts" />
     <Content Include="default.htm" />
     <Content Include="web.config" />
   </ItemGroup>

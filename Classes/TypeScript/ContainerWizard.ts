@@ -1,6 +1,4 @@
 
-
-
 // Class
 class ContainerWizard
 
@@ -8,28 +6,30 @@ class ContainerWizard
     // Constructor
     
     cCidx: number;
-    cCNumber: any;
-    cCName: any;
-    cCLength: number;
+    cCnumber: any;
+    cCname: any;
+    cCcolor: any;
+    cClength: number;
     cCheight: number;
-    cCColor: any;
+    
   
 
-    constructor(pCidx, pCNumber, pCName, pCLength, pCHeight, pCColor) {
+    constructor(pCidx, pCnumber, pCname, pCcolor, pClength, pCheight) {
 
         this.cCidx = pCidx;
-        this.cCNumber = pCNumber;
-        this.cCName = pCName;
-        this.cCName = 
-
+        this.cCnumber = pCnumber;
+        this.cCname = pCname;
+        this.cCcolor = pCcolor;
+        this.cClength = pClength;
+        this.cCheight = pCheight;
 
     }
 
     Paint(pcanvas) {
-        pcanvas.fillStyle = this.cColorRal;
-        pcanvas.fillRect(0, 0, this.clength, this.cheight);
-        pcanvas.fillText(this.cnumber, 10, 50); //Container nummer  ctx.fillText("Sample String", 10, 50); 
-        pcanvas.fillStype = this.cnumberStyle;
+        pcanvas.fillStyle = this.cCcolor;
+        pcanvas.fillRect(0, 0, this.cClength, this.cCheight);
+        //pcanvas.fillText(this.cCnumber, 10, 50); //Container nummer  ctx.fillText("Sample String", 10, 50); 
+        //pcanvas.fillStype = this.cCnumberStyle;
 
         //function showFillText() {
         //    c6_context.fillStyle = '#f00';
@@ -47,11 +47,12 @@ class ContainerWizard
 window.onload = () => {
     var MainCanvas = <HTMLCanvasElement> document.getElementById('MainCanvas');
     var tfbox;
+    var base = new ContainerBase('', 'RTSB123456-7', '20box', '#2A3756', 605, 259);
     //tfbox = <HTMLCanvasElement> document.createElement('20box'); 
     //MainCanvas.appendChild(tfbox);
     //var findtfbox = <HTMLCanvasElement> document.getElementById('20box');
     //var can = findtfbox.getContext("2d");
-    var container = new Container(605, 259, '#2A3756', 'RTSB123456-7', '#f00');
+    var container = new ContainerWizard(base.getIdx(), base.getCnumber(), base.getCname(), base.getCcolor(), base.getClength(), base.getCheight());
     container.Paint(MainCanvas.getContext('2d'));
 
 
