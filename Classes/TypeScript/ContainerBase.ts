@@ -8,71 +8,45 @@ class ContainerBase {
     cCidx: number;
     cCnumber: any;
     cCname: any;
+    cCcolor: any;
     cClength: number;
     cCheight: number;
-    cCcolor: any;
+   
 
 
-    constructor(pCidx, pCNumber, pCName, pCColor, pCLength, pCHeight) {
+    constructor(pCidx, pCnumber, pCname, pCcolor, pClength, pCheight) {
 
         this.cCidx = pCidx;
-        this.cCnumber = pCNumber;
-        this.cCname = pCName;
-        this.cCcolor = pCColor;
-        this.cClength = pCLength;
-        this.cCheight = pCHeight;
-     
+        this.cCnumber = pCnumber;
+        this.cCname = pCname;
+        this.cCcolor = pCcolor;
+        this.cClength = pClength;
+        this.cCheight = pCheight;
 
 
     }
-    // getID, getNumber
 
-    getIdx() {
-        return this.cCidx;
-    }
+    Paint(pcanvas) {
+        pcanvas.fillStyle = this.cCcolor;
+        pcanvas.fillRect(0, 0, this.cClength, this.cCheight);
+       // pcanvas.fillText(this.cCnumber, 10, 50); //Container nummer  ctx.fillText("Sample String", 10, 50); 
 
-    getCnumber() {
-        return this.cCnumber;
-    }
 
-    getCname() {
-        return this.cCname;
 
     }
-
-    getCcolor() {
-        return this.cCcolor;
-    }
-
-    getClength() {
-        return this.cClength;
-    }
-
-    getCheight() {
-        return this.cCheight;
-    }
-
-
 
 }
 
+window.onload = () => {
+    var MainCanvas = <HTMLCanvasElement> document.getElementById('MainCanvas');
+   // var tfbox;
 
-
-//window.onload = () => {
-//    var MainCanvas = <HTMLCanvasElement> document.getElementById('MainCanvas');
-//    var tfbox;
-//    //tfbox = <HTMLCanvasElement> document.createElement('20box'); 
-//    //MainCanvas.appendChild(tfbox);
-//    //var findtfbox = <HTMLCanvasElement> document.getElementById('20box');
-//    //var can = findtfbox.getContext("2d");
-//    var container = new Container(605, 259, '#2A3756');
-//    container.Paint(MainCanvas.getContext('2d'));
+    var container = new Container('', 'RTSB123456-7','20box', '#2A3756', 605, 259);
+    container.Paint(MainCanvas.getContext('2d'));
 
 
 
-
-
-//};
+};
 
 
 
