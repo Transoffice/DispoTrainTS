@@ -11,11 +11,11 @@ class Container {
     cCcolor: any;
     cClength: number;
     cCheight: number;
-    
+    cCnumberColor: any; 
    
 
 
-    constructor(pCidx, pCnumber, pCname, pCcolor, pClength, pCheight) {
+    constructor(pCidx, pCnumber, pCname, pCcolor, pClength, pCheight, pCnumberColor) {
 
         this.cCidx = pCidx;
         this.cCnumber = pCnumber;
@@ -23,18 +23,18 @@ class Container {
         this.cCcolor = pCcolor;
         this.cClength = pClength;
         this.cCheight = pCheight;
+        this.cCnumberColor = pCnumberColor;
 
 
     }
 
     Paint(pcanvas/*, context*/) {
-        //pcanvas.fillStyle = this.cCcolor;
-        //pcanvas.fillRect(0, 0, this.cClength, this.cCheight);
+        pcanvas.fillStyle = this.cCcolor;
+        pcanvas.fillRect(0, 0, this.cClength, this.cCheight);
         pcanvas.fillText (this.cCnumber, 0, 0); //Container nummer  ctx.fillText("Sample String", 10, 50); 
-        //pcanvas.beginPath();
-        pcanvas.fillStyle(this.cCnumber, 'red');
-        pcanvas.lineWidth(this.cCnumber, 7)
-        //pcanvas.fill();
+        pcanvas.fillStyle = this.cCnumberColor;
+        pcanvas.font = '40pt Calibri';
+        pcanvas.fillText (this.cCnumber, 100, 100);
       
 
 
@@ -57,7 +57,7 @@ window.onload = () => {
   
     
 
-    var container = new Container('', 'RTSB123456-7','20box', '#2A3756', 605, 259);
+    var container = new Container('', 'RTSB123456-7','20box', '#2A3756', 605, 259, 'white');
     container.Paint(MainCanvas.getContext('2d'));
 
 
