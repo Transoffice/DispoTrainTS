@@ -28,21 +28,16 @@ class Container {
 
     }
 
-    Paint(pcanvas/*, context*/) {
+    Paint(pcanvas) {
         pcanvas.fillStyle = this.cCcolor;
         pcanvas.fillRect(0, 0, this.cClength, this.cCheight);
-        pcanvas.fillText (this.cCnumber, 0, 0); //Container nummer  ctx.fillText("Sample String", 10, 50); 
+        pcanvas.fillText (this.cCnumber, 0, 0); 
         pcanvas.fillStyle = this.cCnumberColor;
         pcanvas.font = '40pt Calibri';
         pcanvas.fillText (this.cCnumber, 100, 100);
       
 
 
-        //var context = MainCanvas.getContext('2d');
-        //context.beginPath();
-        //context.fillStyle = 'yellow';
-        //context.fill();
-        //context.lineWidth = 7;
 
 
     }
@@ -51,14 +46,36 @@ class Container {
 
 window.onload = () => {
 
-    var MainCanvas = <HTMLCanvasElement> document.getElementById('MainCanvas');
-   // var context = MainCanvas.getContext('2d');
+    var ErsterContainer = <HTMLCanvasElement> document.getElementById('ErsterContainer');
+    var ZweiterContainer = <HTMLCanvasElement> document.getElementById('ZweiterContainer');
+    var Canvas1 = <HTMLCanvasElement> document.getElementById('Canvas1');
+    var Canvas2 = <HTMLCanvasElement> document.getElementById('Canvas2');
+    var Canvas3 = <HTMLCanvasElement> document.getElementById('Canvas3');
+    var Canvas4= <HTMLCanvasElement> document.getElementById('Canvas4');
 
+    
   
     
 
-    var container = new Container('', 'RTSB123456-7','20box', '#2A3756', 605, 259, 'white');
-    container.Paint(MainCanvas.getContext('2d'));
+    var container = new Container('', 'RTSB123456-7','20box', 'black', 605, 259, 'white');
+    container.Paint(ErsterContainer.getContext('2d'));
+
+    var container = new Container('', 'RTSB123456-8', '20box', 'blue', 605, 259, 'white');
+    container.Paint(ZweiterContainer.getContext('2d'));
+
+    var container = new Container('', 'RTSB123456-9', '20box', 'blue', 605, 259, 'white');
+    container.Paint(Canvas1.getContext('2d'));
+
+    var container = new Container('', 'RTSB123456-1', '20box', 'blue', 605, 259, 'white');
+    container.Paint(Canvas2.getContext('2d'));
+
+    var container = new Container('', 'RTSB123456-2', '20box', 'blue', 605, 259, 'white');
+    container.Paint(Canvas3.getContext('2d'));
+
+    var container = new Container('', 'RTSB123456-3', '20box', 'blue', 605, 259, 'white');
+    container.Paint(Canvas4.getContext('2d'));
+
+  
 
 
 
