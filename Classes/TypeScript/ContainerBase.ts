@@ -5,8 +5,8 @@
 class Container {
     // Constructor
 
-    cCidx: number;
-    cCnumber: any;
+    cCidx: number; //Der zugriff sollte auf idx erstellt werden - das machen wir mit einer neuen Methode getIdx
+    cCnumber: any; // wurde auf any gesetzt, weil wir einen String reinschreiben
     cCname: any;
     cCcolor: any;
     cClength: number;
@@ -28,13 +28,18 @@ class Container {
 
     }
 
+    getcCidx() {
+
+        return this.cCidx;   //wir bekommen hier die idx nummer
+    }
+
     Paint(pcanvas) {
         pcanvas.fillStyle = this.cCcolor;
         pcanvas.fillRect(0, 0, this.cClength, this.cCheight);
-        pcanvas.fillText (this.cCnumber, 0, 0); 
+        pcanvas.fillText (this.cCnumber, 100, 100); //0,0??
         pcanvas.fillStyle = this.cCnumberColor;
         pcanvas.font = '40pt Calibri';
-        pcanvas.fillText (this.cCnumber, 100, 100);
+        
       
 
     }
@@ -43,37 +48,45 @@ class Container {
 
 window.onload = () => {
 
-    var ErsterContainer = <HTMLCanvasElement> document.getElementById('ErsterContainer');
-    var ZweiterContainer = <HTMLCanvasElement> document.getElementById('ZweiterContainer');
-    var Canvas3 = <HTMLCanvasElement> document.getElementById('Canvas3');
-    var Canvas4 = <HTMLCanvasElement> document.getElementById('Canvas4');
-    var Canvas5 = <HTMLCanvasElement> document.getElementById('Canvas5');
-    var Canvas6= <HTMLCanvasElement> document.getElementById('Canvas6');
-      
+    var ErsterContainer = document.getElementById('MainCanvas');
 
-    var container = new Container('', 'RTSB123456-7','20box', 'black', 605.8, 259.1, 'white');
-    container.Paint(ErsterContainer.getContext('2d'));
+    container.Paint(MainCanvas.getContext('2d'));
 
-    var container = new Container('', 'RTSB123456-8', '20box', 'blue', 605.8, 259.1, 'white');
-    container.Paint(ZweiterContainer.getContext('2d'));
+    for (var i = 0; i < 3; i++) {
 
-    var container = new Container('', 'RTSB123456-9', '40box', 'red', 1219.2, 259.1, 'white');
-    container.Paint(Canvas3.getContext('2d'));
+        var rectSize = 500;
+        var yPos = (rectSize + 10) * i;
 
-    var container = new Container('', 'RTSB123456-1', '20box', 'blue', 605.8, 259.1, 'white');
-    container.Paint(Canvas4.getContext('2d'));
+        // die For Schleife wiederholt den Anweisungsblock so oft wie in den Runden klammern angegeben ist
+        var container = new Container(1, 'RTSB123456-7', '20box', 'black', 605.8, 259.1, 'white');
 
-    var container = new Container('', 'RTSB123456-2', '20box', 'blue', 605.8, 259.1, 'white');
-    container.Paint(Canvas5.getContext('2d'));
+        var MainCanvas = <HTMLCanvasElement> document.createElement('1'+i); // neues Element + i wird estellt, damit keine Duplikate enstehen. 
 
-    var container = new Container('', 'RTSB123456-3', '20box', 'blue', 605.8, 259.1, 'white');
-    container.Paint(Canvas6.getContext('2d'));
+        MainCanvas.appendChild(MainCanvas);
 
-  
+
+       
 
 
 
+    }
 
+    //function draw_ex03() {
+    //    var canvas = document.getElementById('ex03');
+    //    var ctx = canvas.getContext('2d');
+    //    var width = canvas.width;
+    //    var height = canvas.height;
+
+    //    var rectSize = 40;
+    //    for (var i = 0; i < 3; i++) {
+    //        var yPos = (rectSize + 10) * i;
+
+    //        for (var j = 0; j < 4; j++) {
+    //            ctx.fillRect((rectSize + 10) * j, yPos, rectSize, rectSize);
+    //        }
+    //    }
+    //}
+            
 
 
 };
