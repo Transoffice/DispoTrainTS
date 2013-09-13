@@ -11,7 +11,9 @@ class Container {
     cCcolor: any;
     cClength: number;
     cCheight: number;
-    cCnumberColor: any; 
+    cCnumberColor: any;
+    cCteu: number;
+   
    
 
   
@@ -25,11 +27,14 @@ class Container {
         this.cClength = pClength;
         this.cCheight = pCheight;
         this.cCnumberColor = pCnumberColor;
+       
+       
+
     }
 
     Paint(pcanvas, top, left, zoomfactor) {
         pcanvas.fillStyle = this.cCcolor;
-        pcanvas.fillRect(left, top, this.cClength*zoomfactor, this.cCheight*zoomfactor);
+        pcanvas.fillRect(left, top, this.cClength * zoomfactor, this.cCheight * zoomfactor);  
         pcanvas.fillStyle = this.cCnumberColor;
         var fontsize: number;
         fontsize = 600 * zoomfactor;
@@ -44,6 +49,10 @@ window.onload = () => {
     var MainContext = MainCanvas.getContext('2d');
     var cNumberTextColor = 'white';
     var cCcolor = 'black';
+    var cCspace = 1500;
+   
+    var cCteu = container.cClength; 
+
     MainCanvas.width = screen.availWidth;
     MainCanvas.height = screen.availHeight;
 
@@ -53,12 +62,25 @@ window.onload = () => {
         zoomfactor = 0.01;
     }
 
-  
 
-    var Containerlist= new Array();
+
+
+
+
+    var Containerlist = new Array();
     var container = new Container('', 'RTSB123456-7', '20box', cCcolor, 6058, 2591, cNumberTextColor);
     Containerlist.push(container);
-    var container1 = new Container('', 'RTSB123456-8', '20box',cCcolor,6058, 2591, cNumberTextColor);
+   // alert(cCteu.toString());
+
+    container = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
+    Containerlist.push(container);
+    container = new Container('', 'RTSB123456-1', '40box', cCcolor, 22192, 2591, cNumberTextColor);
+    Containerlist.push(container);
+    container = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
+    Containerlist.push(container);
+    var container = new Container('', 'RTSB123456-7', '20box', cCcolor, 6058, 2591, cNumberTextColor);
+    Containerlist.push(container);
+    var container1 = new Container('', 'RTSB123456-8', '20box', cCcolor, 6058, 2591, cNumberTextColor);
     Containerlist.push(container1);
     var container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
     Containerlist.push(container2);
@@ -120,14 +142,22 @@ window.onload = () => {
     Containerlist.push(container2);
     container2 = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
     Containerlist.push(container2);
-    
+    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
+    Containerlist.push(container2);
+
+
 
 
     var Top = 10;
     var Left = 0;
-    var Space = 10;
+    //var Space = 500;
+
+    ////if(container.cClength > 6058) {
+
+    ////    Space = 30;
+    ////}
     
-    //test
+    ////test
 
     for (var n = 0; n <= Containerlist.length; n++) {
 
@@ -137,8 +167,8 @@ window.onload = () => {
             Left = 0;
         };
         ct.Paint(MainContext, Top, Left, zoomfactor);
-        Left = Left + container.cClength * zoomfactor + Space;
-        //alert(Left.toString() + '   ' + MainCanvas.width.toString()+ '    ');
+        Left = Left + ct.cClength * zoomfactor + cCspace * zoomfactor;
+       
        
     }
 };
