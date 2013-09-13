@@ -51,7 +51,7 @@ window.onload = () => {
     var cCcolor = 'black';
     var cCspace = 1500;
    
-    var cCteu = container.cClength; 
+    //var cCteu = container.cClength; 
 
     MainCanvas.width = screen.availWidth;
     MainCanvas.height = screen.availHeight;
