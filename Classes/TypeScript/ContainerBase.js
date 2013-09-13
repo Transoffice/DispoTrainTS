@@ -118,6 +118,7 @@ window.onload = function () {
 
     var Top = 10;
     var Left = 0;
+    var Space = 10;
 
     for (var n = 0; n <= Containerlist.length; n++) {
         var ct = Containerlist[n];
@@ -127,7 +128,10 @@ window.onload = function () {
         }
         ;
         ct.Paint(MainContext, Top, Left, zoomfactor);
-        Left = Left + ct.cClength * zoomfactor + cCspace * zoomfactor;
+
+        Left = Left + container.cClength * zoomfactor + Space;
+        //alert(Left.toString() + '   ' + MainCanvas.width.toString()+ '    ');
+
     }
 };
 //# sourceMappingURL=ContainerBase.js.map
