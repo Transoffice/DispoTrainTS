@@ -120,24 +120,8 @@ window.onload = () => {
     Containerlist.push(container2);
     container2 = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
     Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-8', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-2', '40box', cCcolor, 12192, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-7', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
+    
+
 
     var Top = 10;
     var Left = 0;
