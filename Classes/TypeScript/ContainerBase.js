@@ -26,12 +26,7 @@ window.onload = function () {
     var MainContext = MainCanvas.getContext('2d');
     var cNumberTextColor = 'white';
     var cCcolor = 'black';
-<<<<<<< HEAD
-    var cCspace = 1500;
 
-    //var cCteu = container.cClength;
-=======
->>>>>>> b1c2f4128404b9023c8c2a6ded394bae21087cbc
     MainCanvas.width = screen.availWidth;
     MainCanvas.height = screen.availHeight;
 
@@ -44,18 +39,7 @@ window.onload = function () {
     var Containerlist = new Array();
     var container = new Container('', 'RTSB123456-7', '20box', cCcolor, 6058, 2591, cNumberTextColor);
     Containerlist.push(container);
-<<<<<<< HEAD
-    // alert(cCteu.toString());
-    container = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
-    Containerlist.push(container);
-    container = new Container('', 'RTSB123456-1', '40box', cCcolor, 22192, 2591, cNumberTextColor);
-    Containerlist.push(container);
-    container = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
-    Containerlist.push(container);
-    var container = new Container('', 'RTSB123456-7', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container);
-=======
->>>>>>> b1c2f4128404b9023c8c2a6ded394bae21087cbc
+
     var container1 = new Container('', 'RTSB123456-8', '20box', cCcolor, 6058, 2591, cNumberTextColor);
     Containerlist.push(container1);
     var container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
@@ -118,11 +102,7 @@ window.onload = function () {
     Containerlist.push(container2);
     container2 = new Container('', 'RTSB123456-1', '40box', cCcolor, 12192, 2591, cNumberTextColor);
     Containerlist.push(container2);
-<<<<<<< HEAD
-    container2 = new Container('', 'RTSB123456-9', '20box', cCcolor, 6058, 2591, cNumberTextColor);
-    Containerlist.push(container2);
-=======
->>>>>>> b1c2f4128404b9023c8c2a6ded394bae21087cbc
+
 
     var Top = 10;
     var Left = 0;
@@ -138,14 +118,7 @@ window.onload = function () {
         ct.Paint(MainContext, Top, Left, zoomfactor);
         Left = Left + container.cClength * zoomfactor + Space;
         //alert(Left.toString() + '   ' + MainCanvas.width.toString()+ '    ');
-<<<<<<< HEAD
 
-        Left = Left + container.cClength * zoomfactor + Space;
-        //alert(Left.toString() + '   ' + MainCanvas.width.toString()+ '    ');
-        Left = Left + container.cClength * zoomfactor + Space;
-        //alert(Left.toString() + '   ' + MainCanvas.width.toString()+ '    ');
-=======
->>>>>>> b1c2f4128404b9023c8c2a6ded394bae21087cbc
     }
 };
 //# sourceMappingURL=ContainerBase.js.map
